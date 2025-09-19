@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewsRN — News, Right Now</title>
+  <meta name="description" content="NewsRN organizes breaking stories into living timelines. Join the beta waitlist." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts: Noto Sans (primary), Space Mono (accents) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Import map for CDN libraries -->
+  <script type="importmap">
+  {
+    "imports": {
+      "dayjs": "https://esm.sh/dayjs@1.11.13"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">NRN</span>
+        <span class="brand-text">NewsRN</span>
+      </div>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="#differentiators">Why NewsRN</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#waitlist" class="cta-link">Join Beta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>News, Right Now — with context</h1>
+          <p class="lede">
+            NewsRN turns breaking news into living timelines, so you see how stories begin, develop, and pivot.
+          </p>
+          <a href="#waitlist" class="button primary">Request Beta Access</a>
+          <p class="subnote">Limited beta. Selection by email lottery.</p>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="mock-timeline">
+            <div class="tick"></div>
+            <div class="event">
+              <time>08:12</time>
+              <p>Initial report published</p>
+            </div>
+            <div class="event">
+              <time>09:47</time>
+              <p>Source confirms key detail</p>
+            </div>
+            <div class="event">
+              <time>12:30</time>
+              <p>Update: official statement</p>
+            </div>
+            <div class="event">
+              <time>15:05</time>
+              <p>Pivot: new evidence emerges</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="differentiators" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>What makes NewsRN different</h2>
+          <ul class="checklist">
+            <li><strong>Timeline-centered news:</strong> Follow an event chronologically, not just headlines.</li>
+            <li><strong>AI-powered grouping:</strong> Related articles become one evolving story.</li>
+            <li><strong>Search that works:</strong> Pulls from multiple APIs, RSS, and outlets.</li>
+            <li><strong>Context over clickbait:</strong> Get summaries and key updates first.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Premium that actually adds value</h3>
+          <ul class="bullets">
+            <li>Daily Sudoku for engagement</li>
+            <li>Advanced settings and custom dashboards</li>
+            <li>Offline timelines</li>
+            <li>Curated expert analysis</li>
+            <li>User control & multi-perspective views</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section alt">
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Timeline View</h3>
+          <p>Chronological updates with sources, timestamps, and links.</p>
+        </div>
+        <div class="card">
+          <h3>Smart Search</h3>
+          <p>Scan multiple outlets for the most recent, relevant results.</p>
+        </div>
+        <div class="card">
+          <h3>Multi-Source Credibility</h3>
+          <p>See where every update comes from—clearly and transparently.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About NewsRN</h2>
+        <p>
+          NewsRN makes sense of the chaos by showing how stories evolve over time. When headlines shift,
+          our timeline keeps the context clear—from first report to latest development.
+        </p>
+        <p class="mono">Stay curious. Stay informed. Stay in the timeline.</p>
+      </div>
+    </section>
+
+    <section id="waitlist" class="section sticky-cta">
+      <div class="container narrow">
+        <h2>Join the Beta Waitlist</h2>
+        <p>Enter your email for a chance to be selected as a beta tester.</p>
+
+        <form id="waitlist-form" class="waitlist-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="help">We’ll only use this to contact beta participants.</div>
+          </div>
+
+          <!-- Honeypot for bots -->
+          <div class="hp" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button type="submit" class="button primary" id="submitBtn">
+            Request Access
+          </button>
+
+          <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="smallprint">
+          By submitting, you agree we may store your email for beta selection and notifications.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-grid">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">NRN</span>
+        <span class="brand-text">NewsRN</span>
+      </div>
+      <p class="footnote">© <span id="year"></span> NewsRN. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+
